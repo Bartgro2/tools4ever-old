@@ -10,7 +10,7 @@
 
 <body>
    <h1> Nieuw product</h1>
-   <form action="" method="post">
+   <form action="verwerk-nieuw-product.php" method="post">
 
       <div class="form-groep">
          <label for="naamProduct">Naam product</label>
