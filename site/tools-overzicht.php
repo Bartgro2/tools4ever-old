@@ -39,6 +39,7 @@ $all_tools = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 <td><?php echo $tool['tool_price'] ?></td>
                 <td><?php echo $tool['tool_brand'] ?></td>
             </tr>
+            <a href=""></a>
         <?php endforeach; ?>
     </tbody>
 
