@@ -30,14 +30,18 @@ $all_tools = mysqli_fetch_all($result, MYSQLI_ASSOC);
             <th>Merk</th>
         </tr>
     </thead>
+
     <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
+        <?php foreach ($all_tools as $tool) : ?>
+            <tr>
+                <td><?php echo $tool['tool_name'] ?></td>
+                <td><?php echo $tool['tool_category'] ?></td>
+                <td><?php echo $tool['tool_price'] ?></td>
+                <td><?php echo $tool['tool_brand'] ?></td>
+            </tr>
+        <?php endforeach; ?>
     </tbody>
+
 </table>
 
 <body>
