@@ -14,19 +14,19 @@
 
       <div class="form-groep">
          <label for="naamProduct">Naam product</label>
-         <input type="text" name="" id="naamProduct">
+         <input type="text" name="naamProduct" id="naamProduct">
       </div>
       <div class="form-groep">
          <label for="categorieProduct">Categorie product</label>
-         <input type="text" name="" id="categorieProduct">
+         <input type="text" name="categorieProduct" id="categorieProduct">
       </div>
       <div class="form-groep">
          <label for="prijsProduct">Prijs product</label>
-         <input type="text" name="" id="prijsProduct">
+         <input type="text" name="prijsProduct" id="prijsProduct">
       </div>
       <div class="form-groep">
          <label for="merkProduct">Merk product</label>
-         <input type="text" name="" id="merkProduct">
+         <input type="text" name="merkProduct" id="merkProduct">
       </div>
       <button type="submit">maak nieuw product!</button>
    </form>
