@@ -4,7 +4,9 @@
 
    
 
-    if($_SERVER["REQUEST_METHOD"] !== $_POST){
+    if($_SERVER["REQUEST_METHOD"] !== "POST"){
+        header($_SERVER["SERVER_PROTOCOL"] . " 405 Method Not Allowed", true, 405);
+        include 'tools-overzicht.php';
         exit;
     }
 
