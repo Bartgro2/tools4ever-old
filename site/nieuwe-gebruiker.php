@@ -1,8 +1,8 @@
 <?php
+
+
+if (!empty($_POST['firstname'])) {
 require 'database.php';
-
-if (!empty($_POST['naamProduct'])) {
-
 
 
     $firstname      = $_POST['firstname'];
@@ -14,12 +14,12 @@ if (!empty($_POST['naamProduct'])) {
     $role           = $_POST['role'];
 
 
-    $sql =  "INSERT INTO users(firstname, lastname, email, password, address, city, role) VALUES ('$firstname','$lastname','$email','$password','$address','$city','$role')";
+    $sql =  "INSERT INTO users(firstname, lastname, email, password, address, city, role) 
+    VALUES ('$firstname','$lastname','$email','$password','$address','$city','$role')";
 
-    mysqli_query($conn, $sql);
 
     if (mysqli_query($conn, $sql)) {
-        header("location: tools-overzicht.php");
+        header("location: nieuwe-gebruiker.php");
         exit;
     }
 }
@@ -40,7 +40,7 @@ if (!empty($_POST['naamProduct'])) {
 <body>
     <div>
         <main>
-            <form action="" method="get">
+            <form action="nieuwe-gebruiker.php" method="post">
 
                 <label for="firstname">firstname</label>
                 <input type="text" name="firstname" id="firstname">
