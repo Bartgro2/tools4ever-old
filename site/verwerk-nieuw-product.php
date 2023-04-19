@@ -1,8 +1,12 @@
 <?php
 
-if (!empty($_POST['naamProduct'])) {
 
 
+   
+
+    if($_SERVER["REQUEST_METHOD"] !== $_POST){
+        exit;
+    }
 
     $naam       = $_POST['naamProduct'];
     $categorie  = $_POST['categorieProduct'];
@@ -20,4 +24,3 @@ if (!empty($_POST['naamProduct'])) {
         header("location: tools-overzicht.php");
         exit;
     }
-}
