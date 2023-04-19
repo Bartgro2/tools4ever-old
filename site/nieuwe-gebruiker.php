@@ -1,5 +1,29 @@
 <?php
 require 'database.php';
+
+if (!empty($_POST['naamProduct'])) {
+
+
+
+    $firstname      = $_POST['firstname'];
+    $lastname       = $_POST['lastname'];
+    $email          = $_POST['email'];
+    $password       = $_POST['password'];
+    $address        = $_POST['address'];
+    $city           = $_POST['city'];
+    $role           = $_POST['role'];
+
+
+    $sql =  "INSERT INTO users(firstname, lastname, email, password, address, city, role) VALUES ('$firstname','$lastname','$email','$password','$address','$city','$role')";
+
+    mysqli_query($conn, $sql);
+
+    if (mysqli_query($conn, $sql)) {
+        header("location: tools-overzicht.php");
+        exit;
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +40,7 @@ require 'database.php';
 <body>
     <div>
         <main>
-            <form action="" method="">
+            <form action="" method="get">
 
                 <label for="firstname">firstname</label>
                 <input type="text" name="firstname" id="firstname">
@@ -36,6 +60,7 @@ require 'database.php';
                     <option value="employee">employee</option>
                     <option value="customer">customer</option>
                 </select>
+                <button type="submit"></button>
             </form>
         </main>
     </div>
