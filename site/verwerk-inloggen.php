@@ -24,6 +24,11 @@ if (!is_array($user)) {
 
 if ($user['password'] === $_POST['password']) {
 
+    session_start();
+
+    $_SESSION['isIngelogd'] = true;
+    $_SESSION['voornaam'] = $user['firstname'];
+
     header("location: dashboard.php");
     exit();
 }
