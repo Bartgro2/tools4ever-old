@@ -13,3 +13,17 @@ label{
 .form-groep{
     margin: 10px 0px;
 }
+
+div.container{
+    width: 960px;
+    margin: 0 auto;
+}
+
+div.flex-container{
+    display: flex;
+    gap: 30px;
+}
+
+div.items{
+    width: 300px;
+}

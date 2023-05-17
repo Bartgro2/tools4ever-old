@@ -1,31 +1,3 @@
-<?php
-
-
-if (!empty($_POST['firstname'])) {
-require 'database.php';
-
-
-    $firstname      = $_POST['firstname'];
-    $lastname       = $_POST['lastname'];
-    $email          = $_POST['email'];
-    $password       = $_POST['password'];
-    $address        = $_POST['address'];
-    $city           = $_POST['city'];
-    $role           = $_POST['role'];
-
-
-    $sql =  "INSERT INTO users(firstname, lastname, email, password, address, city, role) 
-    VALUES ('$firstname','$lastname','$email','$password','$address','$city','$role')";
-
-
-    if (mysqli_query($conn, $sql)) {
-        header("location: nieuwe-gebruiker.php");
-        exit;
-    }
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,7 +12,7 @@ require 'database.php';
 <body>
     <div>
         <main>
-            <form action="nieuwe-gebruiker.php" method="post">
+            <form action="verwerk-nieuw-gebruiker.php" method="post">
 
                 <label for="firstname">firstname</label>
                 <input type="text" name="firstname" id="firstname">
