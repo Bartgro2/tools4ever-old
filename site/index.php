@@ -17,19 +17,18 @@ $tools = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+
 </head>
 
 <body>
     <div class="container">
         <main>
-
             <form action="verwerk-zoek.php" method="post">
                 <label for="zoekveld">Zoek</label>
                 <input type="search" name="zoekveld" id="">
-                      
+
                 <button type="submit">
-                         zoek
+                    zoek
                 </button>
             </form>
 
@@ -44,8 +43,6 @@ $tools = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 <?php endforeach; ?>
             </div>
     </div>
-
-
     </main>
 </body>
 
