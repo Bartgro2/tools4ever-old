@@ -40,8 +40,6 @@ $sql = "SELECT avg (tool_price) as average_price, tool_category FROM tools group
 $result = mysqli_query($conn, $sql);
 $tools_categories_prijzen = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-$sql = "SELECT * from users inner join user_settings on user_settings.user_id = users.id ";
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,7 +65,9 @@ $sql = "SELECT * from users inner join user_settings on user_settings.user_id = 
         <a href="logout.php">logout</a>
     </div>
     <div>
-        <a href="settings.php?="> gebruikers instelligen</a>
+       
+        <a href="settings.php"> gebruikers instelligen</a>
+        
     </div>
 </body>
 

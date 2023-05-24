@@ -27,9 +27,10 @@ if (password_verify($password, $user['password'])) {
 
     session_start();
 
-    $_SESSION['isIngelogd'] = true;
-    $_SESSION['voornaam'] = $user['firstname'];
-    $_SESSION['role'] = $user['role'];
+    $_SESSION['isIngelogd']  = true;
+    $_SESSION['voornaam']    = $user['firstname'];
+    $_SESSION['userid']      = $user['id'];
+    $_SESSION['role']        = $user['role'];
 
     switch ($user['role']) {
         case 'administrator':
