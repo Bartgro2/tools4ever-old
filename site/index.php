@@ -1,49 +1,49 @@
+<?php include 'header.php' ?>
+
 <?php
 
 require 'database.php';
 
-$sql = "SELECT * FROM tools";
+$sql = "SELECT * FROM tools"; //alle tools (rijen) ophalen met alle eigenschappen (kolommen)
+
 $result = mysqli_query($conn, $sql);
+
 $tools = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-
 ?>
+<header>
+    <h1>
+        Welkom bij Tools4ever
+    </h1>
+    <p>
+        Op deze site vind je alle informatie over de tools die te koop zijn bij Tools4ever
+    </p>
+</header>
+<main>
+    <section class="search">
+        <form action="vewerk-zoek.php" method="post">
+            <label for="">zoek</label>
+            <input type="text" name="zoekveld" id="">
+            <button type="submit">Zoek!</button>
+        </form>
+    </section>
 
-<!DOCTYPE html>
-<html lang="en">
+    <div class="product-container">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+        <div class="products-grid">
+            <?php foreach ($tools as $tool) : ?>
+                <div class="product">
+                    <h3 class="product-name"><?php echo $tool['tool_name']; ?></h3>
 
-</head>
+                    <div class="product-price">&euro;<?php echo $tool['tool_price']; ?></div>
 
-<body>
-    <div class="container">
-        <main>
-            <form action="verwerk-zoek.php" method="post">
-                <label for="zoekveld">Zoek</label>
-                <input type="search" name="zoekveld" id="">
-
-                <button type="submit">
-                    zoek
-                </button>
-            </form>
-
-            <div class="flex-container">
-                <?php foreach ($tools as $tool) : ?>
-                    <div class="items">
-                        <p><?php echo $tool['tool_name'] ?> </p>
-                        <p><?php echo $tool['tool_category'] ?> </p>
-                        <p><?php echo $tool['tool_price'] ?></p>
-                        <p><?php echo $tool['tool_brand'] ?></p>
-                    </div>
-                <?php endforeach; ?>
-            </div>
+                    <img src="images/<?php echo $tool['tool_image']; ?>" alt="" class="product-image">
+                    <a href="tools-detail.php?tool_id=<?php echo $tool['tool_id']; ?>">bekijk</a>
+                </div>
+            <?php endforeach; ?>
+        </div>
     </div>
-    </main>
+</main>
 </body>
 
 </html>

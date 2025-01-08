@@ -1,27 +1,23 @@
 <?php
+
 require 'database.php';
 
-$id = $_GET['id'];
+$id = $_GET['tool_id'];
+
 $sql = "SELECT * FROM tools WHERE tool_id = $id";
 
-$result = mysqli_query($conn,$sql);
-  //zolang een rij gevuld kan worden wordt de loop uitgevoerd
-$tool = mysqli_fetch_assoc($result);
-?>
+$tool = mysqli_fetch_assoc(mysqli_query($conn, $sql));
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1><?php echo $tool['tool_name']?></h1>
-    <h2><?php echo $tool['tool_category'] ?></h2>
-    <h3><?php echo $tool['tool_price'] ?></h3>
-    <h4><?php echo $tool['tool_brand'] ?></h4>
-</body>
-</html>
+include 'header.php'; ?>
+
+<div class="product">
+    <h1 class="product-title"><?php echo $tool['tool_name']; ?></h1>
+    <p>
+        <img src="images/<?php echo $tool['tool_image']; ?>" alt="" class="product-detail-image">
+    <div class="product-category"><?php echo $tool['tool_category']; ?></div>
+    <div class="product-brand"><?php echo $tool['tool_brand']; ?></div>
+    <div class="product-price"><?php echo $tool['tool_price']; ?></div>
+    </p>
+    <a href="index.php">Terug</a>
+</div>

@@ -8,6 +8,10 @@ CREATE TABLE tools (
 );
 
 
+
+
+
+
 INSERT INTO tools (tool_name, tool_category, tool_price, tool_brand)
 VALUES
 ('Hammer', 'Handgereedschap', 14.99, 'Hultafors'),
@@ -30,3 +34,15 @@ VALUES
 ('Verfafbrander', 'Verfgereedschap', 39.99, 'Steinel'),
 ('Verfroller', 'Verfgereedschap', 9.99, 'Anza'),
 ('Plamuurmes', 'Verfgereedschap', 6.99, 'Goudhaantje');
+
+/*
+Onderstaande code gaan we ook gebruiken maar op een later moment
+INSERT INTO categories(name) VALUES 
+('Handgereedschap'),
+('Elektrisch gereedschap'),
+('Tegelgereedschap'),
+('Meetgereedschap'),
+('Kitgereedschap'),
+('Lijmgereedschap'),
+('Stofafzuiging'),
+('Verfgereedschap');
